@@ -18,10 +18,10 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "vue": "^3.5.17"
+    "vue": "^3.5.16"
   },
   "dependencies": {
-    "vue": "^3.5.17"
+    "vue": "^3.5.16"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
