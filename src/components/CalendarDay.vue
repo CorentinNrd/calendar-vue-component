@@ -40,8 +40,9 @@
       {{ date.getDate() }}
     </div>
     <div class="content-day" v-if="Array.isArray(data) || data.length > 1">
-      <ul class="ul-day">>
+      <ul class="ul-day">
         <li
+          class="li-day"
           v-for="(e, i) in data"
           :key="i"
           :style="{
@@ -57,7 +58,6 @@
           @click="
             !isCurrentMonth ? null : emit('dayclick', { Date: date, data: e })
           "
-          class="li-day"
         />
       </ul>
     </div>
