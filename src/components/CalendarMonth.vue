@@ -1,11 +1,11 @@
 <!-- src/CalendarMonth.vue -->
 <template>
   <div class="calendar-month">
-    <div class="header">{{ monthLabel }}</div>
+    <div class="header-month">{{ monthLabel }}</div>
     <div v-if="displayDays" class="day-names">
       <div class="day-name" v-for="day in dayNames" :key="day">{{ day }}</div>
     </div>
-    <div class="grid">
+    <div class="grid-day">
       <CalendarDay
         v-for="day in days"
         :key="day.date.toLocaleDateString()"

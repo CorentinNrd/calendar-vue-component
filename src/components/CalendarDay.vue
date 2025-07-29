@@ -3,7 +3,7 @@
     :class="{
       day: isCurrentMonth,
       faded: !isCurrentMonth,
-      hover: !Array.isArray(data) || (data.length === 0 && isCurrentMonth),
+      hoverday: !Array.isArray(data) || (data.length === 0 && isCurrentMonth),
       principale:
         date.toLocaleDateString() ===
           new Date(data?.start)?.toLocaleDateString() ||
@@ -39,8 +39,8 @@
     >
       {{ date.getDate() }}
     </div>
-    <div class="content" v-if="Array.isArray(data) || data.length > 1">
-      <ul>
+    <div class="content-day" v-if="Array.isArray(data) || data.length > 1">
+      <ul class="ul-day">>
         <li
           v-for="(e, i) in data"
           :key="i"
@@ -57,6 +57,7 @@
           @click="
             !isCurrentMonth ? null : emit('dayclick', { Date: date, data: e })
           "
+          class="li-day"
         />
       </ul>
     </div>
