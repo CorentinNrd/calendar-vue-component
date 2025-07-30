@@ -58,7 +58,11 @@ const monthList = computed(() => {
   const months: Date[] = [];
   for (let i = 0; i < count.value; i++) {
     const copy = new Date(baseDate.value);
-    copy.setMonth(copy.getMonth() + i);
+    const targetMonth = copy.getMonth() + i;
+    const targetYear = copy.getFullYear() + Math.floor(targetMonth / 12);
+    const normalizedMonth = targetMonth % 12;
+    
+    copy.setFullYear(targetYear, normalizedMonth, 1);
     months.push(copy);
   }
   return months;
